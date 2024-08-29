@@ -6,7 +6,9 @@
 #include <unordered_map>
 #include <thread>
 #include <chrono>
+#ifndef _WIN32
 #include <unistd.h>
+#endif
 #include <sys/types.h>
 #ifdef _WIN32
 #include <vector>
@@ -106,6 +108,7 @@ public:
     static std::string get_ip()
     {
 #ifdef _WIN32
+#pragma comment(lib, "iphlpapi.lib")
     ULONG flags = GAA_FLAG_INCLUDE_PREFIX;
     ULONG family = AF_INET;  // Use AF_INET6 for IPv6 addresses
     ULONG bufferSize = 0;

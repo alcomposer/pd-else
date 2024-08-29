@@ -8,7 +8,10 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+
+#ifndef WIN32
 #include <unistd.h>
+#endif
 
 static t_class *pdlink_class;
 

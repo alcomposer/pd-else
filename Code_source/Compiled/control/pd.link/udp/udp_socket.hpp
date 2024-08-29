@@ -6,6 +6,8 @@
 #undef TEXT
 #include <winsock2.h>
 #include <ws2tcpip.h>
+#undef min
+#include <algorithm>
 typedef SSIZE_T ssize_t;
 // Unix
 #else
